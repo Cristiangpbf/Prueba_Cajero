@@ -20,8 +20,9 @@ namespace Cajero
         public Acciones(SqlConnection con, int id_tarj)
         {
             InitializeComponent();
-            new Retirar(con).Hide();
             groupConsulta.Hide();
+            groupBoxRetirar.Hide();
+
             SqlCommand cmd_nombre = new SqlCommand("select * from USUARIO,CUENTA,TARJETA where usuario.ID_USER = CUENTA.ID_USER and CUENTA.ID_CUENTA =TARJETA.ID_CUENTA and TARJETA.ID_TARJ = @CUENTA;", con);
             cmd_nombre.Parameters.AddWithValue("CUENTA", id_tarj);
             SqlDataAdapter sda2 = new SqlDataAdapter(cmd_nombre);
@@ -33,6 +34,13 @@ namespace Cajero
             a = dt_nombre.Rows[0][9].ToString();
             b = dt_nombre.Rows[0][8].ToString();
             c = dt_nombre.Rows[0][10].ToString();
+
+            //Retiros
+            SqlCommand cmd_retiros = new SqlCommand("INSERT INTO [TRANSACCION]([ID_TARJ],[ID_CAJERO],[FECHA_TRANS],[TIPO_TRANS],[VALOR]) VALUES (@id_tarj,1 ,null ,'Retiro',@valor)", con);
+            cmd_nombre.Parameters.AddWithValue("id_tarj", id_tarj);
+            SqlDataAdapter sda3 = new SqlDataAdapter(cmd_nombre);
+            //DataTable = new DataTable();
+            
         }
 
         private void Acciones_Load(object sender, EventArgs e)
@@ -60,7 +68,13 @@ namespace Cajero
 
         private void buttonRetiro_Click(object sender, EventArgs e)
         {
-            
+            groupBoxRetirar.Show();
+            this.Hide();
+        }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)

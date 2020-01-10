@@ -34,6 +34,8 @@
             this.buttonRetiro = new System.Windows.Forms.Button();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.groupConsulta = new System.Windows.Forms.GroupBox();
+            this.buttonSalirConsulta = new System.Windows.Forms.Button();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.label_saldo = new System.Windows.Forms.Label();
             this.label_tipoCuenta = new System.Windows.Forms.Label();
             this.label_cuenta = new System.Windows.Forms.Label();
@@ -41,9 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonSalirConsulta = new System.Windows.Forms.Button();
+            this.groupBoxRetirar = new System.Windows.Forms.GroupBox();
+            this.buttonSalirRetirar = new System.Windows.Forms.Button();
+            this.buttonAceptar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxValor = new System.Windows.Forms.TextBox();
             this.groupConsulta.SuspendLayout();
+            this.groupBoxRetirar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -112,6 +118,26 @@
             this.groupConsulta.Size = new System.Drawing.Size(486, 208);
             this.groupConsulta.TabIndex = 5;
             this.groupConsulta.TabStop = false;
+            // 
+            // buttonSalirConsulta
+            // 
+            this.buttonSalirConsulta.Location = new System.Drawing.Point(383, 170);
+            this.buttonSalirConsulta.Name = "buttonSalirConsulta";
+            this.buttonSalirConsulta.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalirConsulta.TabIndex = 15;
+            this.buttonSalirConsulta.Text = "Salir";
+            this.buttonSalirConsulta.UseVisualStyleBackColor = true;
+            this.buttonSalirConsulta.Click += new System.EventHandler(this.buttonSalirConsulta_Click);
+            // 
+            // buttonVolver
+            // 
+            this.buttonVolver.Location = new System.Drawing.Point(9, 170);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
+            this.buttonVolver.TabIndex = 14;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // label_saldo
             // 
@@ -183,31 +209,60 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "El saldo de su cuenta es de:";
             // 
-            // buttonVolver
+            // groupBoxRetirar
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(9, 170);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
-            this.buttonVolver.TabIndex = 14;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.groupBoxRetirar.Controls.Add(this.textBoxValor);
+            this.groupBoxRetirar.Controls.Add(this.buttonSalirRetirar);
+            this.groupBoxRetirar.Controls.Add(this.buttonAceptar);
+            this.groupBoxRetirar.Controls.Add(this.label11);
+            this.groupBoxRetirar.Location = new System.Drawing.Point(18, 88);
+            this.groupBoxRetirar.Name = "groupBoxRetirar";
+            this.groupBoxRetirar.Size = new System.Drawing.Size(486, 208);
+            this.groupBoxRetirar.TabIndex = 16;
+            this.groupBoxRetirar.TabStop = false;
             // 
-            // buttonSalirConsulta
+            // buttonSalirRetirar
             // 
-            this.buttonSalirConsulta.Location = new System.Drawing.Point(383, 170);
-            this.buttonSalirConsulta.Name = "buttonSalirConsulta";
-            this.buttonSalirConsulta.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalirConsulta.TabIndex = 15;
-            this.buttonSalirConsulta.Text = "Salir";
-            this.buttonSalirConsulta.UseVisualStyleBackColor = true;
-            this.buttonSalirConsulta.Click += new System.EventHandler(this.buttonSalirConsulta_Click);
+            this.buttonSalirRetirar.Location = new System.Drawing.Point(383, 170);
+            this.buttonSalirRetirar.Name = "buttonSalirRetirar";
+            this.buttonSalirRetirar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalirRetirar.TabIndex = 15;
+            this.buttonSalirRetirar.Text = "Salir";
+            this.buttonSalirRetirar.UseVisualStyleBackColor = true;
+            // 
+            // buttonAceptar
+            // 
+            this.buttonAceptar.Location = new System.Drawing.Point(9, 170);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.TabIndex = 14;
+            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(21, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 24);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Cuenta: ";
+            // 
+            // textBoxValor
+            // 
+            this.textBoxValor.Location = new System.Drawing.Point(151, 49);
+            this.textBoxValor.Name = "textBoxValor";
+            this.textBoxValor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxValor.TabIndex = 16;
             // 
             // Acciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 308);
+            this.Controls.Add(this.groupBoxRetirar);
             this.Controls.Add(this.groupConsulta);
             this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.buttonRetiro);
@@ -219,6 +274,8 @@
             this.Load += new System.EventHandler(this.Acciones_Load);
             this.groupConsulta.ResumeLayout(false);
             this.groupConsulta.PerformLayout();
+            this.groupBoxRetirar.ResumeLayout(false);
+            this.groupBoxRetirar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +298,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonSalirConsulta;
         private System.Windows.Forms.Button buttonVolver;
+        private System.Windows.Forms.GroupBox groupBoxRetirar;
+        private System.Windows.Forms.TextBox textBoxValor;
+        private System.Windows.Forms.Button buttonSalirRetirar;
+        private System.Windows.Forms.Button buttonAceptar;
+        private System.Windows.Forms.Label label11;
     }
 }
