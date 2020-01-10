@@ -1,0 +1,11 @@
+.vs/
+/bin/Debug/
+/obj/Debug/
+Debug/
+/Debug/*
+
+bin/
+obj/
+
+/bin/
+/obj/
