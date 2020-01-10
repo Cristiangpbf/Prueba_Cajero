@@ -84,6 +84,7 @@
             this.buttonRetiro.TabIndex = 3;
             this.buttonRetiro.Text = "Retiro";
             this.buttonRetiro.UseVisualStyleBackColor = true;
+            this.buttonRetiro.Click += new System.EventHandler(this.buttonRetiro_Click);
             // 
             // buttonSalir
             // 
@@ -93,6 +94,7 @@
             this.buttonSalir.TabIndex = 4;
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
+            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
             // groupConsulta
             // 

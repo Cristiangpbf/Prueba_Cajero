@@ -20,6 +20,7 @@ namespace Cajero
         public Acciones(SqlConnection con, int id_tarj)
         {
             InitializeComponent();
+            new Retirar(con).Hide();
             groupConsulta.Hide();
             SqlCommand cmd_nombre = new SqlCommand("select * from USUARIO,CUENTA,TARJETA where usuario.ID_USER = CUENTA.ID_USER and CUENTA.ID_CUENTA =TARJETA.ID_CUENTA and TARJETA.ID_TARJ = @CUENTA;", con);
             cmd_nombre.Parameters.AddWithValue("CUENTA", id_tarj);
@@ -49,6 +50,17 @@ namespace Cajero
         {            
             this.Hide();
             new LogIn().Show();
+        }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LogIn().Show();
+        }
+
+        private void buttonRetiro_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

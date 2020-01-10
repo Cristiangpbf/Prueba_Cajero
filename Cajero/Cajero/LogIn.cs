@@ -17,6 +17,7 @@ namespace Cajero
         {
             InitializeComponent();
         }
+        
         public SqlConnection con = new SqlConnection("Data Source=DESKTOP-VHEG681;Initial Catalog=Cajero;Integrated Security=True");
         
         public void Logear(string num_tarj, string clave)
